@@ -1,12 +1,15 @@
 import Vue from 'vue'
 import App from './App.vue'
 import './registerServiceWorker'
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
 import router from './router'
-import IEFComponents from './components/IEFCustomComponents'
+import IMFComponents from './components/IMFCustomComponents'
 
 Vue.config.productionTip = false
 
-Vue.use(IEFComponents)
+Vue.use(ElementUI)
+Vue.use(IMFComponents)
 
 new Vue({
   router,

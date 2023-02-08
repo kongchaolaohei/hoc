@@ -1,23 +1,28 @@
 <template>
-  <fks-option
-    class="ief-option"
+  <el-radio-group
+    class="imf-radio-group"
     v-bind="$attrs"
     v-on="$listeners"
   >
     <template v-for="(_, name) in $scopedSlots" v-slot:[name]="data">
       <slot :name="name" v-bind="data"/>
     </template>
-  </fks-option>
+  </el-radio-group>
 </template>
 
 <script>
 
 export default {
-  name: 'IEFOption',
+  name: 'imf-radio-group',
 };
 </script>
 <style lang="scss">
-.ief-option {
-
+.imf-radio-group.el-radio-group {
+  .imf-radio {
+    // margin-right: 40px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
 }
 </style>

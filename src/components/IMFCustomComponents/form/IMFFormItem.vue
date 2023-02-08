@@ -1,9 +1,9 @@
 <template>
-  <fks-form 
+  <el-form-item
     ref="form"
     v-bind="$attrs"
     v-on="$listeners"
-    class="ief-form"
+    class="imf-form-item"
   >
     <template v-for="(_, slotName) in $scopedSlots" v-slot:[slotName]="slotData">
       <slot :name="slotName" v-bind="slotData"/>
@@ -11,22 +11,17 @@
     <template v-for="(_, slotName) in $slots" #[slotName]>
       <slot :name="slotName" />
     </template>
-  </fks-form>
+  </el-form-item>
 </template>
 
 <script>
 export default {
-  name: 'IEFForm',
-  methods: {
-    getRef() {
-      return this.$refs.form
-    }
-  }
+  name: 'imf-form-item'
 }
 </script>
 
 <style lang="scss">
-.ief-form {
+.imf-form-item {
   
 }
 </style>

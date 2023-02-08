@@ -1,23 +1,23 @@
 <template>
-  <fks-table-column
-    class="measuring-point-table"
+  <el-option
+    class="imf-option"
     v-bind="$attrs"
     v-on="$listeners"
   >
     <template v-for="(_, name) in $scopedSlots" v-slot:[name]="data">
       <slot :name="name" v-bind="data"/>
     </template>
-  </fks-table-column>
+  </el-option>
 </template>
 
 <script>
 
 export default {
-  name: 'IEFTableColum',
+  name: 'imf-option',
 };
 </script>
 <style lang="scss">
-.measuring-point-table.fks-date-editor {
-  
+.imf-option {
+
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
-  <fks-tabs
-    class="ief-tabs"
+  <el-tabs
+    class="imf-tabs"
     v-bind="$attrs"
     v-on="$listeners"
   >
@@ -10,13 +10,13 @@
     <template v-for="(_, slotName) in $slots" #[slotName]>
       <slot :name="slotName" />
     </template>
-  </fks-tabs>
+  </el-tabs>
 </template>
 
 <script>
 
 export default {
-  name: 'IEFTabs',
+  name: 'imf-tabs',
 };
 </script>
 <style lang="scss">
@@ -26,8 +26,11 @@ export default {
   background-repeat: no-repeat;
   @content;
 }
-.ief-tabs.fks-tabs {
-  .fks-tabs__active-bar.is-top {
+.imf-tabs.el-tabs {
+  .el-tabs__nav-wrap::after {
+    height: 1px;
+  }
+  .el-tabs__active-bar.is-top {
     background-color: transparent;
     &::after{
       content: '';
@@ -42,8 +45,8 @@ export default {
     }
     // clip-path: polygon(25% 0, 75% 0, 75% 100%, 25% 100%)
   }
-  .fks-tabs__nav {
-    .fks-tabs__item {
+  .el-tabs__nav {
+    .el-tabs__item {
       font-weight: 400;
       &:hover {
         color: #0CC0CC;
